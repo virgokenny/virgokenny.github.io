@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>我的第一篇文章 - Kenny&#39;s Blog</title>
+  <title>從寫Code到Rpm - Kenny&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Kenny Chou" />
-  <meta name="description" content="概論 這是一個我拿來記錄學習筆記的平台。 使用工具 Markdown Language Hugo Github Page Markdown Language 以前在公司寫 API 文件時，都是使用 Sphinx 來寫，也就是 reStructureText。 RST 跟" />
+  <meta name="description" content="目的 最近在公司將我們自己寫的Code要Deploy到RedHat 8或CentOS 8機器上， 所以選擇一些方便的工具來達成目標。 我的目的是可以將" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -31,7 +31,7 @@
 <meta name="msvalidate.01" content="FA1ADBDB8F0BBBD0F7F4E65CDEBF7898" />
 
 
-<link rel="canonical" href="https://virgokenny.github.io/blog/post/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" />
+<link rel="canonical" href="https://virgokenny.github.io/blog/post/%E5%BE%9E%E5%AF%ABcode%E5%88%B0rpm/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
@@ -54,23 +54,23 @@
 
 
 
-<meta property="og:title" content="我的第一篇文章" />
-<meta property="og:description" content="概論 這是一個我拿來記錄學習筆記的平台。 使用工具 Markdown Language Hugo Github Page Markdown Language 以前在公司寫 API 文件時，都是使用 Sphinx 來寫，也就是 reStructureText。 RST 跟" />
+<meta property="og:title" content="從寫Code到Rpm" />
+<meta property="og:description" content="目的 最近在公司將我們自己寫的Code要Deploy到RedHat 8或CentOS 8機器上， 所以選擇一些方便的工具來達成目標。 我的目的是可以將" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://virgokenny.github.io/blog/post/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" />
-<meta property="article:published_time" content="2020-03-10T20:00:00+08:00" />
-<meta property="article:modified_time" content="2020-03-10T20:00:00+08:00" />
-<meta itemprop="name" content="我的第一篇文章">
-<meta itemprop="description" content="概論 這是一個我拿來記錄學習筆記的平台。 使用工具 Markdown Language Hugo Github Page Markdown Language 以前在公司寫 API 文件時，都是使用 Sphinx 來寫，也就是 reStructureText。 RST 跟">
-<meta itemprop="datePublished" content="2020-03-10T20:00:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-10T20:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="537">
+<meta property="og:url" content="https://virgokenny.github.io/blog/post/%E5%BE%9E%E5%AF%ABcode%E5%88%B0rpm/" />
+<meta property="article:published_time" content="2020-05-07T20:57:36+08:00" />
+<meta property="article:modified_time" content="2020-05-07T20:57:36+08:00" />
+<meta itemprop="name" content="從寫Code到Rpm">
+<meta itemprop="description" content="目的 最近在公司將我們自己寫的Code要Deploy到RedHat 8或CentOS 8機器上， 所以選擇一些方便的工具來達成目標。 我的目的是可以將">
+<meta itemprop="datePublished" content="2020-05-07T20:57:36&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-07T20:57:36&#43;08:00" />
+<meta itemprop="wordCount" content="989">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="我的第一篇文章"/>
-<meta name="twitter:description" content="概論 這是一個我拿來記錄學習筆記的平台。 使用工具 Markdown Language Hugo Github Page Markdown Language 以前在公司寫 API 文件時，都是使用 Sphinx 來寫，也就是 reStructureText。 RST 跟"/>
+<meta name="twitter:title" content="從寫Code到Rpm"/>
+<meta name="twitter:description" content="目的 最近在公司將我們自己寫的Code要Deploy到RedHat 8或CentOS 8機器上， 所以選擇一些方便的工具來達成目標。 我的目的是可以將"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -141,9 +141,9 @@
       
 
       <div class="post-meta">
-        <span class="post-time"> 2020-03-10 </span>
+        <span class="post-time"> 2020-05-07 </span>
         
-        <span class="more-meta"> 約 537 字 </span>
+        <span class="more-meta"> 約 989 字 </span>
           <span class="more-meta"> 預計閱讀 2 分鐘 </span>
         
       </div>
@@ -157,9 +157,12 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#markdown-language">Markdown Language</a></li>
-    <li><a href="#hugo">Hugo</a></li>
-    <li><a href="#gibhub-page">Gibhub Page</a></li>
+    <li><a href="#code版本控制">Code版本控制</a></li>
+    <li><a href="#build-code">Build Code</a></li>
+    <li><a href="#unit-test">Unit Test</a></li>
+    <li><a href="#ci">CI</a></li>
+    <li><a href="#rpm">RPM</a></li>
+    <li><a href="#rpm-repository-server">RPM Repository Server</a></li>
   </ul>
 </nav>
   </div>
@@ -170,31 +173,39 @@
 
     
     <div class="post-content">
-      <h1 id="概論">概論</h1>
-<p>這是一個我拿來記錄學習筆記的平台。</p>
-<p>使用工具</p>
-<ul>
-<li>Markdown Language</li>
-<li>Hugo</li>
-<li>Github Page</li>
-</ul>
-<h2 id="markdown-language">Markdown Language</h2>
-<p>以前在公司寫 API 文件時，都是使用 Sphinx 來寫，也就是 reStructureText。
-RST 跟 Markdown 乍看之下語法有點類似，使用上似乎也是用一些簡單的 Syntax 來表示文章格式。
-所以到底有甚麼不同？彼此有甚麼優缺點嗎？</p>
-<p>根據 Markdown 作者說法，MD 的目的是為了產生 Web HTML 而設計的語法；而 RST 則是特別設計用來撰寫 API 文件的。
-所以 MD 不單單只是可以用 Syntax 產生文件，同樣也可以撰寫一些 HTML 來表達原來 Syntax 無法產生的格式。
-可以說如果要寫一篇部落格，也許用 MD 是比較好的選擇。如果是要寫 API 文件而 RST 是更適合。</p>
-<p>當然這並非絕對，MD 也是可以使用 Doxygen 來產生 API 文件，這邊只是論述當初設計的目的。
-網路上其實也可以看到許多比較文章，至於要用何種語法就端看你的目的了。</p>
-<h2 id="hugo">Hugo</h2>
-<p>Hugo 是一款用 Golang 撰寫的靜態網頁生產器，安裝及部屬非常容易，產生靜態網頁的速度也是相當快。
-由於我想要把撰寫的內容放置到 Gihub 上，這樣支援 MD 又是可以生成 Static Html 的工具非常適合來使用。</p>
-<h2 id="gibhub-page">Gibhub Page</h2>
-<p>Github 不只是拿來做 code 的版本控制，也有免費放置靜態網頁的伺服器功能。
-只要建立 <em>username</em>.github.io 的 repository，然後放置你的靜態網頁，輸入 domain 就能夠看到你的網頁內容，非常方便。</p>
-<h1 id="總結">總結</h1>
-<p>希望藉由這些工具養成一個紀錄筆記的習慣，不管是工作或者是生活上，有這樣的習慣總是對自己是有幫助的。</p>
+      <h1 id="目的">目的</h1>
+<p>最近在公司將我們自己寫的Code要Deploy到RedHat 8或CentOS 8機器上，
+所以選擇一些方便的工具來達成目標。</p>
+<p>我的目的是可以將這些流程自動化，從Clone Repository、Build Code、跑Unit Test、
+包成Rpm Package到建立一個Rpm Repository Server，
+這些透過自架的Jenkins和Git Server (Bitbucket)串接。</p>
+<p>所以到時候如果機器要安裝或者更新我們的Service都可以透過Rpm Install的方式快速部署。
+但由於部署目前專案來說並不是頻率很高的動作，所以部署的工具就先暫不考慮。</p>
+<h2 id="code版本控制">Code版本控制</h2>
+<p>當然就是使用Git來管理，我們是跟Bitbucket買License然後自己架設。
+然後我們也有購買Jira，所以在開發流程上就可以將這兩個部分結合讓我們更方便管理我們的專案。</p>
+<h2 id="build-code">Build Code</h2>
+<p>因為我們是用C/C++語言，可能有跨平台需求(Windows/Linux)。
+所以有考慮CMake或者QMake，只是因為Project並非用QT，而且要用QMake需要安裝QT，
+相對CMake來說就有點多餘。</p>
+<p>只要善用好CMake可以自動化很多流程，相當方便。</p>
+<h2 id="unit-test">Unit Test</h2>
+<p>使用C/C++，大概就是用Google Test跟Google Mock了，當然搭配CMake也可以很快速建置Unit Test環境。
+但比起其他語言，還是相對麻煩許多。</p>
+<h2 id="ci">CI</h2>
+<p>Jenkins是目前最多人使用的CI Tool，他的Plugin以及資訊也是相當多，免費又可以自建Server，
+而Plugin可以跟很多第三方服務做整合(Github、Slack、等等)。
+我目前是用一些簡單的Shell Script和Plugin就可以做到很多自動化的工作。</p>
+<h2 id="rpm">RPM</h2>
+<p>目前部屬的Server OS主要以RedHat 8和CentOS 8為主，而他們的Package Tool是用RPM，
+所以怎麼樣將我們的Code包成RPM是這次比較大的重點。雖然網路上資料很多，
+但其中有些細節是真的要碰過才知道。</p>
+<h2 id="rpm-repository-server">RPM Repository Server</h2>
+<p>包好RPM後，就是要讓人可以Install你的RPM。建立好自己的RPM Package Repository Server，
+人人就都可以快速安裝或更新你的軟體。</p>
+<h1 id="小結">小結</h1>
+<p>我認為這整套流程是你的Code產品化不可缺少的東西，也許大家的Code語言不同、部屬的OS也不一樣，
+但我想整個流程是類似。所以紀錄一下這整套流程並有機會分享一下各個Stage如何做以及可能遇到的問題會是甚麼。</p>
 
     </div>
 
@@ -206,14 +217,14 @@ RST 跟 Markdown 乍看之下語法有點類似，使用上似乎也是用一些
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-03-10</span>
+    <span class="item-content">2020-05-07</span>
   </p>
   
   
 </div>
 
 	
-	<div class="fb-like" style="margin-left: 10px; margin-top: 4px;" data-href="https://virgokenny.github.io/blog/post/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+	<div class="fb-like" style="margin-left: 10px; margin-top: 4px;" data-href="https://virgokenny.github.io/blog/post/%E5%BE%9E%E5%AF%ABcode%E5%88%B0rpm/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 	
     
     
@@ -225,14 +236,13 @@ RST 跟 Markdown 乍看之下語法有點類似，使用上似乎也是用一些
       <nav class="post-nav">
         
 		  <div>
-          <a class="prev" href="/blog/post/%E5%BE%9E%E5%AF%ABcode%E5%88%B0rpm/" style="float: none;">
-            <span class="next-text nav-mobile" style="display: inline-block;">下一篇</span>			
-            <i class="fas fa-arrow-circle-right"></i>			
-            <span class="next-text nav-default">從寫Code到Rpm</span>			
+        
+          <a class="prev" href="/blog/post/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" style="float: none;">
+            <span class="prev-text nav-mobile" style="display: inline-block;">上一篇</span>	  
+            <i class="fas fa-arrow-circle-left"></i>
+            <span class="prev-text nav-default">我的第一篇文章</span>			
           </a>
 		  </div>
-		  <div>
-        
       </nav>
     </footer>
   </article>
