@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tmux - Kenny&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Kenny Chou" />
+  <meta name="description" content="tmux Init tmux [xkd]$ tmux Create window ctl &#43; b then c Create Pane (Tile Split) ctl &#43; b then % # split the current pane vertically ctl &#43; b then &amp;#34; # split the current pane horizontally Jump between Panes ctl &#43; b then press arrow key # move to other pane ctl &#43; b then o # jump to the next pane Resize Pane ctl &#43; b then : resize-pane -D # Resizes the current pane down ctl &#43; b then : resize-pane -U # Resizes the current pane upward ctl &#43; b then : resize-pane -L # Resizes the current pane left ctl &#43; b then : resize-pane -R # Resizes the current pane right ctl &#43; b then : resize-pane -D 20 # Resizes the current pane down by 20 cells ctl &#43; b then : resize-pane -U 20 # Resizes the current pane upward by 20 cells ctl &#43; b then : resize-pane -L 20 # Resizes the current pane left by 20 cells ctl &#43; b then : resize-pane -R 20 # Resizes the current pane right by 20 cells Close Pane ctl &#43; b then x # close the current pane Show Pane ID ctl &#43; b then q # show the IDs of the panes Zoom Pane ctl &#43; b then z # toggle pane zoom " />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.65.3" />
+
+<meta name="msvalidate.01" content="FA1ADBDB8F0BBBD0F7F4E65CDEBF7898" />
+
+
+<link rel="canonical" href="https://virgokenny.github.io/blog/post/tmux/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+<link rel="manifest" href="/blog/manifest.json">
+<link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/blog/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<meta property="og:title" content="Tmux" />
+<meta property="og:description" content="tmux Init tmux [xkd]$ tmux Create window ctl &#43; b then c Create Pane (Tile Split) ctl &#43; b then % # split the current pane vertically ctl &#43; b then &#34; # split the current pane horizontally Jump between Panes ctl &#43; b then press arrow key # move to other pane ctl &#43; b then o # jump to the next pane Resize Pane ctl &#43; b then : resize-pane -D # Resizes the current pane down ctl &#43; b then : resize-pane -U # Resizes the current pane upward ctl &#43; b then : resize-pane -L # Resizes the current pane left ctl &#43; b then : resize-pane -R # Resizes the current pane right ctl &#43; b then : resize-pane -D 20 # Resizes the current pane down by 20 cells ctl &#43; b then : resize-pane -U 20 # Resizes the current pane upward by 20 cells ctl &#43; b then : resize-pane -L 20 # Resizes the current pane left by 20 cells ctl &#43; b then : resize-pane -R 20 # Resizes the current pane right by 20 cells Close Pane ctl &#43; b then x # close the current pane Show Pane ID ctl &#43; b then q # show the IDs of the panes Zoom Pane ctl &#43; b then z # toggle pane zoom " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://virgokenny.github.io/blog/post/tmux/" />
+<meta property="article:published_time" content="2021-01-20T14:44:09+08:00" />
+<meta property="article:modified_time" content="2021-01-20T14:44:09+08:00" />
+<meta itemprop="name" content="Tmux">
+<meta itemprop="description" content="tmux Init tmux [xkd]$ tmux Create window ctl &#43; b then c Create Pane (Tile Split) ctl &#43; b then % # split the current pane vertically ctl &#43; b then &#34; # split the current pane horizontally Jump between Panes ctl &#43; b then press arrow key # move to other pane ctl &#43; b then o # jump to the next pane Resize Pane ctl &#43; b then : resize-pane -D # Resizes the current pane down ctl &#43; b then : resize-pane -U # Resizes the current pane upward ctl &#43; b then : resize-pane -L # Resizes the current pane left ctl &#43; b then : resize-pane -R # Resizes the current pane right ctl &#43; b then : resize-pane -D 20 # Resizes the current pane down by 20 cells ctl &#43; b then : resize-pane -U 20 # Resizes the current pane upward by 20 cells ctl &#43; b then : resize-pane -L 20 # Resizes the current pane left by 20 cells ctl &#43; b then : resize-pane -R 20 # Resizes the current pane right by 20 cells Close Pane ctl &#43; b then x # close the current pane Show Pane ID ctl &#43; b then q # show the IDs of the panes Zoom Pane ctl &#43; b then z # toggle pane zoom ">
+<meta itemprop="datePublished" content="2021-01-20T14:44:09&#43;08:00" />
+<meta itemprop="dateModified" content="2021-01-20T14:44:09&#43;08:00" />
+<meta itemprop="wordCount" content="224">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tmux"/>
+<meta name="twitter:description" content="tmux Init tmux [xkd]$ tmux Create window ctl &#43; b then c Create Pane (Tile Split) ctl &#43; b then % # split the current pane vertically ctl &#43; b then &#34; # split the current pane horizontally Jump between Panes ctl &#43; b then press arrow key # move to other pane ctl &#43; b then o # jump to the next pane Resize Pane ctl &#43; b then : resize-pane -D # Resizes the current pane down ctl &#43; b then : resize-pane -U # Resizes the current pane upward ctl &#43; b then : resize-pane -L # Resizes the current pane left ctl &#43; b then : resize-pane -R # Resizes the current pane right ctl &#43; b then : resize-pane -D 20 # Resizes the current pane down by 20 cells ctl &#43; b then : resize-pane -U 20 # Resizes the current pane upward by 20 cells ctl &#43; b then : resize-pane -L 20 # Resizes the current pane left by 20 cells ctl &#43; b then : resize-pane -R 20 # Resizes the current pane right by 20 cells Close Pane ctl &#43; b then x # close the current pane Show Pane ID ctl &#43; b then q # show the IDs of the panes Zoom Pane ctl &#43; b then z # toggle pane zoom "/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<link href='https://raw.githubusercontent.com/yowko/picsbed/master/opensearchdescription.xml' rel='search' title='Content search' type='application/opensearchdescription+xml'/>
+
+</head>
+<body>
+     
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/" class="logo">Kenny</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header" style="height: 118px; padding-bottom: 0px;">
+        <div class="logo-wrapper">
+  <a href="/blog/" class="logo">Kenny</a>
+</div>
+<div style="padding-bottom: 60px;"> </div>
+</nav>
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/blog/">Home</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/blog/post/">Archives</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/blog/tags/">Tags</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/blog/categories/">Categories</a>
+    </li>
+  </ul>
+</nav>
+    </header>	
+    <main id="main" class="main">		
+      <div class="content-wrapper">		
+		<hr style="border-top: 1px solid #e6e6e6; border-bottom: 0px; padding: 0px;" />
+        <div id="content" class="content">		
+          <article class="post">
+    
+    <header class="post-header">
+      
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-01-20 </span>
+        
+        <span class="more-meta"> 約 224 字 </span>
+          <span class="more-meta"> 預計閱讀 2 分鐘 </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目錄</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#init-tmux">Init tmux</a></li>
+        <li><a href="#create-window">Create window</a></li>
+        <li><a href="#create-pane-tile-split">Create Pane (Tile Split)</a></li>
+        <li><a href="#jump-between-panes">Jump between Panes</a></li>
+        <li><a href="#resize-pane">Resize Pane</a></li>
+        <li><a href="#close-pane">Close Pane</a></li>
+        <li><a href="#show-pane-id">Show Pane ID</a></li>
+        <li><a href="#zoom-pane">Zoom Pane</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <h1 id="tmux">tmux</h1>
+<h3 id="init-tmux">Init tmux</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>xkd<span style="color:#f92672">]</span>$ tmux
+</code></pre></div><h3 id="create-window">Create window</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> c
+</code></pre></div><h3 id="create-pane-tile-split">Create Pane (Tile Split)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> % <span style="color:#75715e"># split the current pane vertically</span>
+ctl + b <span style="color:#66d9ef">then</span> <span style="color:#e6db74">&#34; # split the current pane horizontally
+</span></code></pre></div><h3 id="jump-between-panes">Jump between Panes</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> press arrow key <span style="color:#75715e"># move to other pane</span>
+ctl + b <span style="color:#66d9ef">then</span> o <span style="color:#75715e"># jump to the next pane</span>
+</code></pre></div><h3 id="resize-pane">Resize Pane</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> : resize-pane -D    <span style="color:#75715e"># Resizes the current pane down</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -U    <span style="color:#75715e"># Resizes the current pane upward</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -L    <span style="color:#75715e"># Resizes the current pane left</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -R    <span style="color:#75715e"># Resizes the current pane right</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -D <span style="color:#ae81ff">20</span> <span style="color:#75715e"># Resizes the current pane down by 20 cells</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -U <span style="color:#ae81ff">20</span> <span style="color:#75715e"># Resizes the current pane upward by 20 cells</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -L <span style="color:#ae81ff">20</span> <span style="color:#75715e"># Resizes the current pane left by 20 cells</span>
+ctl + b <span style="color:#66d9ef">then</span> : resize-pane -R <span style="color:#ae81ff">20</span> <span style="color:#75715e"># Resizes the current pane right by 20 cells</span>
+</code></pre></div><h3 id="close-pane">Close Pane</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> x <span style="color:#75715e"># close the current pane</span>
+</code></pre></div><h3 id="show-pane-id">Show Pane ID</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> q <span style="color:#75715e"># show the IDs of the panes</span>
+</code></pre></div><h3 id="zoom-pane">Zoom Pane</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ctl + b <span style="color:#66d9ef">then</span> z <span style="color:#75715e"># toggle pane zoom</span>
+</code></pre></div>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Kenny Chou</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-01-20</span>
+  </p>
+  
+  
+</div>
+
+	
+	<div class="fb-like" style="margin-left: 10px; margin-top: 4px;" data-href="https://virgokenny.github.io/blog/post/tmux/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+	
+    
+    
+	
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+		  <div>
+        
+          <a class="prev" href="/blog/post/%E5%BE%9E%E5%AF%ABcode%E5%88%B0rpm/" style="float: none;">
+            <span class="prev-text nav-mobile" style="display: inline-block;">上一篇</span>	  
+            <i class="fas fa-arrow-circle-left"></i>
+            <span class="prev-text nav-default">從寫Code到Rpm</span>			
+          </a>
+		  </div>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+      </div>
+    </main>
+	
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="mailto:virgokenny@gmail.com" class="iconfont icon-email" title="email"></a>
+  <a href="https://stackoverflow.com/users/12997866/kenny" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+  <a href="https://twitter.com/virgokenny16" class="iconfont icon-twitter" title="twitter"></a>
+  <a href="http://m.facebook.com/virgokenny" class="iconfont icon-facebook" title="facebook"></a>
+  <a href="http://www.linkedin.com/in/virgokenny" class="iconfont icon-linkedin" title="linkedin"></a>
+  <a href="https://github.com/virgokenny" class="iconfont icon-github" title="github"></a>
+  <a href="https://www.instagram.com/virgokenny9/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href='' type="application/rss+xml"
+    class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 強力驅動
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主題 -
+    <a class="theme-link" href="https://github.com/huanlin/hugo-theme-even-more">Even More</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy;
+    
+    2020 -
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span
+      class="author">Kenny Chou</span>
+  </span>
+</div>
+    </footer>
+	
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div> 
+  
+  
+<script src="/blog/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/blog/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script type="text/javascript" src="/blog/lib/instantclick/instantclick-3.0.1.min.js" data-no-instant></script>
+
+
+<script data-no-instant>InstantClick.init();</script>
+
+
+<script type="text/javascript" src="/blog/dist/even.min.js?v=3.2.0"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154939021-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+  
+
+</body>
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content on Kenny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2020 20:57:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2021 14:44:09 +0800</lastBuildDate>
     
 	<atom:link href="https://virgokenny.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tmux</title>
+      <link>https://virgokenny.github.io/blog/post/tmux/</link>
+      <pubDate>Wed, 20 Jan 2021 14:44:09 +0800</pubDate>
+      
+      <guid>https://virgokenny.github.io/blog/post/tmux/</guid>
+      <description>tmux Init tmux [xkd]$ tmux Create window ctl + b then c Create Pane (Tile Split) ctl + b then % # split the current pane vertically ctl + b then &amp;#34; # split the current pane horizontally Jump between Panes ctl + b then press arrow key # move to other pane ctl + b then o # jump to the next pane Resize Pane ctl + b then : resize-pane -D # Resizes the current pane down ctl + b then : resize-pane -U # Resizes the current pane upward ctl + b then : resize-pane -L # Resizes the current pane left ctl + b then : resize-pane -R # Resizes the current pane right ctl + b then : resize-pane -D 20 # Resizes the current pane down by 20 cells ctl + b then : resize-pane -U 20 # Resizes the current pane upward by 20 cells ctl + b then : resize-pane -L 20 # Resizes the current pane left by 20 cells ctl + b then : resize-pane -R 20 # Resizes the current pane right by 20 cells Close Pane ctl + b then x # close the current pane Show Pane ID ctl + b then q # show the IDs of the panes Zoom Pane ctl + b then z # toggle pane zoom </description>
+    </item>
     
     <item>
       <title>從寫Code到Rpm</title>
